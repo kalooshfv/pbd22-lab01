@@ -1,0 +1,29 @@
+[
+    {
+        "model": "wishlist.itemwishlist",
+        "pk":1,
+        "fields":{
+            "item_name": "iPhone 14 Pro Maag",
+            "item_price":"14000000",
+            "description": "It gives you ulcers because it's expensive."
+        }
+},
+{
+        "model": "wishlist.itemwishlist",
+        "pk":2,
+        "fields":{
+            "item_name": "Round Hat",
+            "item_price":"99000",
+            "description": "Round is my hat, if it's not round it's not my hat."
+        }
+    },
+    {
+        "model": "wishlist.itemwishlist",
+        "pk":3,
+        "fields":{
+            "item_name": "Folding Mattress",
+            "item_price":"500000",
+            "description": "How many layers? Hundreds!"
+        }
+    }
+]
