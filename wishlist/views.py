@@ -17,6 +17,7 @@ def show_wishlist(request):
         'list_item': data_wishlist_item,
         'name': 'Kaloosh Falito Verrell',
         'last_login': request.COOKIES['last_login'],
+        'user': request.user,
     }
     return render(request, "wishlist.html", context)
 
