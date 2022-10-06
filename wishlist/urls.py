@@ -1,7 +1,6 @@
 from django.urls import path
 from wishlist.views import *
 
-
 app_name = 'wishlist'
 
 urlpatterns = [
@@ -13,4 +12,5 @@ urlpatterns = [
     path('register/', register, name='register'),
     path('login/', login_user, name='login'),
     path('logout/', logout_user, name='logout'),
+    path('ajax/', show_wishlist_ajax, name='ajax'),
 ]

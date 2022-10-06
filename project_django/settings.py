@@ -142,3 +142,12 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Handle CORS when developing locally
+#SECURE_CROSS_ORIGIN_OPENER_POLICY = None
+#SECURE_CONTENT_TYPE_NOSNIFF = False
+#SECURE_REFERRER_POLICY = "unsafe-url"
+CSRF_TRUSTED_ORIGINS = [
+    "http://localhost",
+    "http://127.0.0.1"
+]

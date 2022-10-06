@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from wishlist.models import ItemWishlist
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect, JsonResponse, HttpRequest
 from django.core import serializers
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
@@ -8,6 +8,8 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 import datetime
 from django.urls import reverse
+from wishlist.forms import *
+from project_django.settings import PRODUCTION
 
 # Create your views here.
 @login_required(login_url='/wishlist/login/')
@@ -75,4 +77,12 @@ def logout_user(request):
     response.delete_cookie('last_login')
     return response
 
+def show_wishlist_ajax(request:HttpRequest) -> HttpResponse:
+    data_wishlist_item = ItemWishlist.objects.all()
+    context = {
+        'name': 'Kaloosh Falito Verrell',
+    }
+    return render(request, "wishlist_ajax.html", context)
+    
+ 
 

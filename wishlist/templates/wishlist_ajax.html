@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<h5>Name: </h5>
+<p>{{user}}</p>
+
+
+    <div class="tbody">
+        <table>
+            <tr>
+            <th>Item Name</th>
+            <th>Item Price</th>
+            <th>Description</th>
+            </tr>
+        </table>
+    </div>
+
+
+<script>
+    $(document).ready(function() {
+        const url = "http://127.0.0.1:8000/wishlist/json/"
+        $.get(url, (data) => {
+            data.forEach((item) => {
+                var item_name = item.fields.item_name;
+                var item_price = item.fields.item_price;
+                var item_description = item.fields.description;
+                var html = "<tr><td>" + item_name + "</td><td>" + item_price + "</td><td>" + item_description + "</td></tr>";
+            $(".tbody").append(html);
+            });   
+        });
+    });
+</script>
+{% endblock content %}
+
