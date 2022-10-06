@@ -19,7 +19,8 @@
 
 <script>
     $(document).ready(function() {
-        const url = "http://127.0.0.1:8000/wishlist/json/"
+        const url = "{% url 'wishlist:show_json' %}"
+        
         $.get(url, (data) => {
             data.forEach((item) => {
                 var item_name = item.fields.item_name;
